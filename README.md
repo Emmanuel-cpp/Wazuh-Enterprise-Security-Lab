@@ -49,32 +49,13 @@ Key areas covered:
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 
-The Wazuh server runs **two active network interfaces** simultaneously — one on the VirtualBox Host-Only network and one bridged to the real WiFi network — receiving agent logs from machines on completely different network segments through a single dashboard.
+The Wazuh server runs **two active network interfaces** simultaneously one on the VirtualBox Host-Only network and one bridged to the real WiFi network — receiving agent logs from machines on completely different network segments through a single dashboard.
 
-**Agents 2 and 3 are both fully independent external machines** — not part of the VirtualBox environment, connected to the Wazuh server purely over shared WiFi. This demonstrates real-world distributed endpoint monitoring across independently managed machines on a live network.
+**Agents 2 and 3 are both fully independent external machines** not part of the VirtualBox environment, connected to the Wazuh server purely over shared WiFi. This demonstrates real-world distributed endpoint monitoring across independently managed machines on a live network.
 
----
 
-## 🛠️ Tools & Technologies
+## Installation & Setup
 
-| Tool | Version | Purpose |
-|---|---|---|
-| **Wazuh Manager** | 4.7.5 | Central SIEM/XDR engine |
-| **Wazuh Indexer** | 4.7.5 | OpenSearch-based alert storage |
-| **Wazuh Dashboard** | 4.7.5 | Real-time browser-based visualization |
-| **Wazuh Agent** | 4.7.5 | Endpoint monitoring on all Windows machines |
-| **Hydra** | v9.6 | SSH, SMB and RDP brute-force simulation |
-| **Kali Linux** | Rolling | Dedicated attack platform |
-| **VirtualBox** | 7.2.4 | Virtualization platform |
-
----
-
-## 🚀 Installation & Setup
-
-### Prerequisites
-- Ubuntu 24.04 VM — minimum 4GB RAM, 20GB disk, 2 CPU cores
-- 2GB swap file required for Wazuh Indexer stability
-- OSSEC stopped if Phase 1 was completed
 
 ### Step 1 — Add Swap File
 ```bash
@@ -155,7 +136,7 @@ sudo /var/ossec/bin/agent_control -l
 
 ---
 
-## 📸 Lab Setup
+## Lab Setup
 
 ### All 3 Agents Active on Wazuh Dashboard
 ![Agents Dashboard](screenshots/wazuh-agents-dashboard.png)
@@ -283,18 +264,7 @@ Wazuh-Enterprise-Security-Lab/
     └── ossec.conf
 ```
 
----
-
-## 🔗 References
-
-- [Wazuh Official Documentation](https://documentation.wazuh.com)
-- [Wazuh GitHub Repository](https://github.com/wazuh/wazuh)
-- [MITRE ATT&CK Framework](https://attack.mitre.org)
-- [Phase 1 — OSSEC Lab](https://github.com/Emmanuel-cpp/Host-Based-Intrusion-Detection-System-HIDS-Lab-OSSEC.git)
-
----
-
-## 👨‍💻 Author
+## Author
 
 **Emmanuel Siamoonga**
 Cloud Infrastructure | Network and Cloud Security
