@@ -1,4 +1,4 @@
-# 🛡️ Enterprise Security Monitoring Lab — Wazuh SIEM/XDR
+# Enterprise Security Monitoring Lab — Wazuh SIEM/XDR
 
 ![Wazuh](https://img.shields.io/badge/Wazuh-4.7.5-blue?style=for-the-badge)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-orange?style=for-the-badge&logo=ubuntu)
@@ -9,9 +9,9 @@
 
 ---
 
-## 📌 Objective
+## Objective
 
-This project is **Phase 2** of a two-part security monitoring lab series. Having built a foundational understanding of Host-based Intrusion Detection using OSSEC in Phase 1, this phase upgrades the entire environment to **Wazuh 4.7.5** — the modern enterprise-grade evolution of OSSEC — adding a full SIEM dashboard, MITRE ATT&CK mapping, multi-agent management across independent network segments, and real-time threat visualization.
+This project is Phase 2 of a two-part security monitoring lab series. Having built a foundational understanding of Host-based Intrusion Detection using OSSEC in Phase 1, this phase upgrades the entire environment to Wazuh 4.7.5 the modern enterprise-grade evolution of OSSEC — adding a full SIEM dashboard, MITRE ATT&CK mapping, multi-agent management across independent network segments, and real-time threat visualization.
 
 The lab simulates a real **Security Operations Center (SOC)** environment where a central Wazuh server monitors multiple independent Windows endpoints across different networks, detects live attacks from a dedicated Kali Linux attacker machine, and automatically maps every detection to the MITRE ATT&CK framework.
 
@@ -23,26 +23,8 @@ Key areas covered:
 - Real-time alert visualization with severity escalation up to Level 12 Critical
 - Compliance framework monitoring — PCI-DSS triggered automatically
 
-> **Phase 1:** [OSSEC Host-Based IDS Lab](https://github.com/Emmanuel-cpp/Host-Based-Intrusion-Detection-System-HIDS-Lab-OSSEC.git)
 
----
-
-## 🔗 From OSSEC to Wazuh
-
-OSSEC is the foundation. Wazuh is built directly on top of it — inheriting the same rule engine, log collection architecture, and agent communication protocol. Every concept from Phase 1 carries forward. The difference is everything built around it.
-
-| Feature | OSSEC | Wazuh |
-|---|---|---|
-| Web Interface | Legacy PHP UI (2016) | Modern full SIEM dashboard |
-| MITRE ATT&CK Mapping | No | Yes — automatic on every alert |
-| Vulnerability Detection | No | Yes — CVE scanning per agent |
-| Multi-Agent Dashboard | Text output only | Full visual centralized management |
-| Compliance Monitoring | No | PCI-DSS, HIPAA, GDPR built-in |
-| Alert Visualization | Raw log files | Interactive charts, graphs, timelines |
-
----
-
-## 🏗️ Lab Architecture
+## Lab Architecture
 
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
@@ -69,7 +51,7 @@ OSSEC is the foundation. Wazuh is built directly on top of it — inheriting the
 
 The Wazuh server runs **two active network interfaces** simultaneously — one on the VirtualBox Host-Only network and one bridged to the real WiFi network — receiving agent logs from machines on completely different network segments through a single dashboard.
 
-**Agent 3 is a fully independent external laptop** — not part of the VirtualBox environment, connected to the Wazuh server purely over shared WiFi. This demonstrates real-world distributed endpoint monitoring across independently managed machines.
+**Agents 2 and 3 are both fully independent external machines** — not part of the VirtualBox environment, connected to the Wazuh server purely over shared WiFi. This demonstrates real-world distributed endpoint monitoring across independently managed machines on a live network.
 
 ---
 
@@ -177,7 +159,7 @@ sudo /var/ossec/bin/agent_control -l
 
 ### All 3 Agents Active on Wazuh Dashboard
 ![Agents Dashboard](screenshots/wazuh-agents-dashboard.png)
-> Wazuh simultaneously managing 3 independent Windows endpoints across two network segments — including one fully external independent laptop
+> Wazuh simultaneously managing 3 independent Windows endpoints across two network segments — including two fully independent external machines connected purely over shared WiFi
 
 ---
 
@@ -249,7 +231,7 @@ Every attack was automatically classified into the MITRE ATT&CK framework — no
 
 ---
 
-## 📊 Alert Summary
+## Alert Summary
 
 | Rule | Level | Description | Source |
 |---|---|---|---|
@@ -263,7 +245,7 @@ Every attack was automatically classified into the MITRE ATT&CK framework — no
 
 ---
 
-## 🔑 Key Takeaways
+## Key Takeaways
 
 **Wazuh as a SOC Platform**
 A single Wazuh server replicated core enterprise SOC capability — centralized multi-agent detection, automatic MITRE ATT&CK classification, and compliance monitoring all running on a 4GB RAM virtual machine.
@@ -271,8 +253,8 @@ A single Wazuh server replicated core enterprise SOC capability — centralized 
 **Multi-Network Distributed Monitoring**
 Agents across two network segments — VirtualBox Host-Only and real WiFi — all reporting to one server. This reflects how enterprise environments actually work across subnets and physical locations.
 
-**Independent External Agent**
-Agent 3 was a completely independent laptop connected only over shared WiFi — no VPN, no domain, no special setup beyond the agent install. Wazuh scales to any machine that can reach the manager IP.
+**Independent External Agents**
+Agents 2 and 3 were completely independent machines connected only over shared WiFi — no VPN, no domain membership, no special setup beyond the agent install. Wazuh scales to any machine that can reach the manager IP regardless of who owns or manages it.
 
 **MITRE ATT&CK Without Manual Work**
 Every detection automatically classified into techniques and tactics. Alerts are immediately actionable and communicable using the global standard framework SOC analysts use daily.
@@ -282,7 +264,7 @@ Single failed login → Level 5. Sustained brute force → Level 10. Combined mu
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 Wazuh-Enterprise-Security-Lab/
@@ -315,7 +297,7 @@ Wazuh-Enterprise-Security-Lab/
 ## 👨‍💻 Author
 
 **Emmanuel Siamoonga**
-Cloud Infrastructure | Network and Cloud Security | The Copperbelt University, Kitwe, Zambia
+Cloud Infrastructure | Network and Cloud Security
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/emmanuel-siamoonga-98b30929b/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=flat&logo=github)](https://github.com/Emmanuel-cpp)
