@@ -7,11 +7,9 @@
 ![MITRE](https://img.shields.io/badge/MITRE-ATT%26CK%20Mapped-red?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 
----
-
 ## Objective
 
-This project is Phase 2 of a two-part security monitoring lab series. Having built a foundational understanding of Host-based Intrusion Detection using OSSEC in Phase 1, this phase upgrades the entire environment to Wazuh 4.7.5 the modern enterprise-grade evolution of OSSEC — adding a full SIEM dashboard, MITRE ATT&CK mapping, multi-agent management across independent network segments, and real-time threat visualization.
+This project is Phase 2 of a two-part security monitoring lab series. Having built a foundational understanding of Host-based Intrusion Detection using OSSEC in Phase 1, this phase upgrades the entire environment to Wazuh 4.7.5 the modern enterprise-grade evolution of OSSEC adding a full SIEM dashboard, MITRE ATT&CK mapping, multi-agent management across independent network segments, and real-time threat visualization.
 
 The lab simulates a real **Security Operations Center (SOC)** environment where a central Wazuh server monitors multiple independent Windows endpoints across different networks, detects live attacks from a dedicated Kali Linux attacker machine, and automatically maps every detection to the MITRE ATT&CK framework.
 
