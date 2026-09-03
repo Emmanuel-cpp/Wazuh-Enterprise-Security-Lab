@@ -142,7 +142,7 @@ sudo /var/ossec/bin/agent_control -l
 
 ---
 
-## 🔴 Demo 1 — SSH Brute Force Detection
+## Demo 1 — SSH Brute Force Detection
 
 **From Kali — 14 million password attempts against Ubuntu:**
 ```bash
@@ -163,7 +163,7 @@ Rule 5763  (Level 10) → sshd: brute force trying to get access to the system
 
 ---
 
-## 🔴 Demo 2 — Windows Endpoint Attack
+## Demo 2 — Windows Endpoint Attack
 
 **SMB and RDP brute force against external Windows machine:**
 ```bash
@@ -179,7 +179,7 @@ hydra -l administrator -P /usr/share/wordlists/rockyou.txt rdp://192.168.0.200 -
 
 ---
 
-## 🔴 Demo 3 — Level 12 Critical Alert
+## Demo 3 — Level 12 Critical Alert
 
 The combined volume of simultaneous attacks across multiple agents overwhelmed the Wazuh event queue — generating a **Level 12 Critical alert**. This mirrors a real SOC scenario where attackers deliberately flood logging systems to exhaust resources.
 
@@ -191,7 +191,7 @@ The combined volume of simultaneous attacks across multiple agents overwhelmed t
 
 ---
 
-## 🔴 Demo 4 — MITRE ATT&CK Automatic Mapping
+## Demo 4 — MITRE ATT&CK Automatic Mapping
 
 Every attack was automatically classified into the MITRE ATT&CK framework — no manual tagging required.
 
@@ -215,10 +215,10 @@ Every attack was automatically classified into the MITRE ATT&CK framework — no
 | Rule | Level | Description | Source |
 |---|---|---|---|
 | 5760 | 5 | sshd: authentication failed | auth.log |
-| 5763 | 10 | 🔴 sshd: brute force detected | auth.log |
+| 5763 | 10 | sshd: brute force detected | auth.log |
 | 60104 | 5 | Windows audit failure event | WinEvtLog |
 | 60107 | 4 | Failed privileged operation attempt | WinEvtLog |
-| **204** | **12** | **🔴 Agent event queue flooded** | **Wazuh** |
+| **204** | **12** | ** Agent event queue flooded** | **Wazuh** |
 
 **Total alerts — single session: 3,098 | Highest level: 12 Critical | PCI-DSS: 10.6.1**
 
